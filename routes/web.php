@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -29,3 +30,10 @@ Route::post('/utilisateurs', [UserController::class, 'store'])->name('users.stor
 Route::get('/utilisateurs/{user}/modifier', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/utilisateurs/{user}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/utilisateurs/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/creer', [CategoryController::class, 'create'])->name('categories.create');
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+Route::get('/categories/{category}/modifier', [CategoryController::class, 'edit'])->name('categories.edit');
+Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
