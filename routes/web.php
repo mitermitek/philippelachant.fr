@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return \Inertia\Inertia::render('Welcome');
 });
+Route::get('/connexion', [AuthController::class, 'login']);
+Route::post('/connexion', [AuthController::class, 'authenticate']);
+Route::get('/deconnexion', [AuthController::class, 'logout']);
