@@ -3,7 +3,7 @@
         <label for="name">Nom</label>
         <input v-model="form.name" id="name" type="text" placeholder="Nom">
 
-        <p v-if="form.errors.email">{{ form.errors.email }}</p>
+        <p v-if="form.errors.name">{{ form.errors.name }}</p>
 
         <label for="email">Adresse mail</label>
         <input v-model="form.email" id="email" type="email" placeholder="Adresse mail">
