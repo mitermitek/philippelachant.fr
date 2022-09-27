@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
@@ -37,3 +38,10 @@ Route::post('/categories', [CategoryController::class, 'store'])->name('categori
 Route::get('/categories/{category}/modifier', [CategoryController::class, 'edit'])->name('categories.edit');
 Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+Route::get('/oeuvres', [ArtworkController::class, 'index'])->name('artworks.index');
+Route::get('/oeuvres/creer', [ArtworkController::class, 'create'])->name('artworks.create');
+Route::post('/oeuvres', [ArtworkController::class, 'store'])->name('artworks.store');
+Route::get('/oeuvres/{artwork}/modifier', [ArtworkController::class, 'edit'])->name('artworks.edit');
+Route::put('/oeuvres/{artwork}', [ArtworkController::class, 'update'])->name('artworks.update');
+Route::delete('/oeuvres/{artwork}', [ArtworkController::class, 'destroy'])->name('artworks.destroy');
