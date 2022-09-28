@@ -1,12 +1,17 @@
 <template>
-    <h1 class="text-3xl font-bold underline">
-        Welcome!
-    </h1>
+    <Layout>
+        <h1 class="text-3xl font-bold underline">
+            Welcome!
+        </h1>
+    </Layout>
 </template>
 
 <script>
+import Layout from '../Shared/Layout.vue';
+
 export default {
-    name: "Welcome"
+    name: "Welcome",
+    components: {Layout}
 }
 </script>
 
