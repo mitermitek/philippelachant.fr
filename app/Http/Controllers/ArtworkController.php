@@ -78,6 +78,7 @@ class ArtworkController extends Controller
 
     public function destroy(Artwork $artwork)
     {
+        Storage::disk('public')->delete($artwork->image_path);
         $artwork->delete();
 
         return redirect()->route('artworks.index')->with('success', 'Oeuvre supprimée.');
