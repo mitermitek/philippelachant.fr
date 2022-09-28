@@ -21,27 +21,30 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Welcome');
 });
-Route::get('/connexion', [AuthController::class, 'login']);
+Route::get('/connexion', [AuthController::class, 'login'])->name('login');
 Route::post('/connexion', [AuthController::class, 'authenticate']);
-Route::get('/deconnexion', [AuthController::class, 'logout']);
 
-Route::get('/utilisateurs', [UserController::class, 'index'])->name('users.index');
-Route::get('/utilisateurs/creer', [UserController::class, 'create'])->name('users.create');
-Route::post('/utilisateurs', [UserController::class, 'store'])->name('users.store');
-Route::get('/utilisateurs/{user}/modifier', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/utilisateurs/{user}', [UserController::class, 'update'])->name('users.update');
-Route::delete('/utilisateurs/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::middleware('auth')->group(function () {
+    Route::get('/deconnexion', [AuthController::class, 'logout']);
 
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-Route::get('/categories/creer', [CategoryController::class, 'create'])->name('categories.create');
-Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
-Route::get('/categories/{category}/modifier', [CategoryController::class, 'edit'])->name('categories.edit');
-Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
-Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+    Route::get('/utilisateurs', [UserController::class, 'index'])->name('users.index');
+    Route::get('/utilisateurs/creer', [UserController::class, 'create'])->name('users.create');
+    Route::post('/utilisateurs', [UserController::class, 'store'])->name('users.store');
+    Route::get('/utilisateurs/{user}/modifier', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/utilisateurs/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/utilisateurs/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 
-Route::get('/oeuvres', [ArtworkController::class, 'index'])->name('artworks.index');
-Route::get('/oeuvres/creer', [ArtworkController::class, 'create'])->name('artworks.create');
-Route::post('/oeuvres', [ArtworkController::class, 'store'])->name('artworks.store');
-Route::get('/oeuvres/{artwork}/modifier', [ArtworkController::class, 'edit'])->name('artworks.edit');
-Route::put('/oeuvres/{artwork}', [ArtworkController::class, 'update'])->name('artworks.update');
-Route::delete('/oeuvres/{artwork}', [ArtworkController::class, 'destroy'])->name('artworks.destroy');
+    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('/categories/creer', [CategoryController::class, 'create'])->name('categories.create');
+    Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::get('/categories/{category}/modifier', [CategoryController::class, 'edit'])->name('categories.edit');
+    Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+    Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+    Route::get('/oeuvres', [ArtworkController::class, 'index'])->name('artworks.index');
+    Route::get('/oeuvres/creer', [ArtworkController::class, 'create'])->name('artworks.create');
+    Route::post('/oeuvres', [ArtworkController::class, 'store'])->name('artworks.store');
+    Route::get('/oeuvres/{artwork}/modifier', [ArtworkController::class, 'edit'])->name('artworks.edit');
+    Route::put('/oeuvres/{artwork}', [ArtworkController::class, 'update'])->name('artworks.update');
+    Route::delete('/oeuvres/{artwork}', [ArtworkController::class, 'destroy'])->name('artworks.destroy');
+});
