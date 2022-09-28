@@ -1,18 +1,26 @@
 <template>
-    <form @submit.prevent="authenticate">
-        <p v-if="form.errors.credentials">{{ form.errors.credentials }}</p>
+    <h1 class="text-center font-bold text-xl mb-5">Connexion</h1>
 
-        <label for="email">Adresse mail</label>
-        <input v-model="form.email" id="email" type="email" placeholder="Adresse mail">
+    <form class="max-w-xs mx-auto" @submit.prevent="authenticate">
+        <p v-if="form.errors.credentials" class="text-red-500 text-center mb-5">{{ form.errors.credentials }}</p>
 
-        <p v-if="form.errors.email">{{ form.errors.email }}</p>
+        <div class="mb-3">
+            <label class="block font-medium mb-1" for="email">Adresse mail</label>
+            <input id="email" v-model="form.email" class="block w-full rounded border border-gray-300 px-2 py-1" placeholder="Adresse mail"
+                   type="email">
 
-        <label for="password">Mot de passe</label>
-        <input v-model="form.password" id="password" type="password" placeholder="Mot de passe">
+            <p v-if="form.errors.email" class="text-red-500 mt-2">{{ form.errors.email }}</p>
+        </div>
 
-        <p v-if="form.errors.password">{{ form.errors.password }}</p>
+        <div class="mb-3">
+            <label class="block font-medium mb-1" for="password">Mot de passe</label>
+            <input id="password" v-model="form.password" class="block w-full rounded border border-gray-300 px-2 py-1" placeholder="Mot de passe"
+                   type="password">
 
-        <button type="submit">Connexion</button>
+            <p v-if="form.errors.password" class="text-red-500 mt-2">{{ form.errors.password }}</p>
+        </div>
+
+        <button class="block w-full rounded bg-yellow-400 px-4 py-2 text-white font-semibold" type="submit">Connexion</button>
     </form>
 </template>
 

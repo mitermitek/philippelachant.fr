@@ -1,29 +1,29 @@
 <template>
-    <table>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Nom</th>
-            <th>Image</th>
-            <th>Catégorie</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="artwork in artworks">
-            <td>{{ artwork.id }}</td>
-            <td>{{ artwork.name }}</td>
-            <td>{{ artwork.image_path }}</td>
-            <td>{{ artwork.category.name }}</td>
-            <td>
-                <Link :href="`/oeuvres/${artwork.id}/modifier`">
-                    <button type="button">
-                        Modifier
-                    </button>
-                </Link>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+    <div class="overflow-x-auto relative rounded">
+        <table class="w-full max-w-4xl mx-auto text-left text-sm">
+            <thead class="uppercase bg-gray-100">
+            <tr>
+                <th class="py-3 px-6">Nom</th>
+                <th class="py-3 px-6">Catégorie</th>
+                <th class="py-3 px-6 text-center">Modifier</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="artwork in artworks">
+                <th class="py-4 px-6" scope="row">{{ artwork.name }}</th>
+                <td class="py-4 px-6">{{ artwork.category.name }}</td>
+                <td class="py-4 px-6">
+                    <Link :href="`/oeuvres/${artwork.id}/modifier`">
+                        <button class="block w-full rounded bg-yellow-400 py-1 px-2 text-white font-semibold"
+                                type="button">
+                            Modifier
+                        </button>
+                    </Link>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script>

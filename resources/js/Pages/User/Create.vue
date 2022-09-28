@@ -1,26 +1,43 @@
 <template>
-    <form @submit.prevent="store">
-        <label for="name">Nom</label>
-        <input v-model="form.name" id="name" type="text" placeholder="Nom">
+    <h1 class="text-center font-bold text-xl mb-5">Créer un utilisateur</h1>
 
-        <p v-if="form.errors.name">{{ form.errors.name }}</p>
+    <form class="max-w-xs mx-auto" @submit.prevent="store">
+        <div class="mb-3">
+            <label class="block font-medium mb-1" for="name">Nom</label>
+            <input id="name" v-model="form.name" class="block w-full rounded border border-gray-300 px-2 py-1"
+                   placeholder="Nom" type="text">
 
-        <label for="email">Adresse mail</label>
-        <input v-model="form.email" id="email" type="email" placeholder="Adresse mail">
+            <p v-if="form.errors.name" class="text-red-500 mt-2">{{ form.errors.name }}</p>
+        </div>
 
-        <p v-if="form.errors.email">{{ form.errors.email }}</p>
+        <div class="mb-3">
+            <label class="block font-medium mb-1" for="email">Adresse mail</label>
+            <input id="email" v-model="form.email" class="block w-full rounded border border-gray-300 px-2 py-1"
+                   placeholder="Adresse mail" type="email">
 
-        <label for="password">Mot de passe</label>
-        <input v-model="form.password" id="password" type="password" placeholder="Mot de passe">
+            <p v-if="form.errors.email" class="text-red-500 mt-2">{{ form.errors.email }}</p>
+        </div>
 
-        <p v-if="form.errors.password">{{ form.errors.password }}</p>
+        <div class="mb-3">
+            <label class="block font-medium mb-1" for="password">Mot de passe</label>
+            <input id="password" v-model="form.password" class="block w-full rounded border border-gray-300 px-2 py-1"
+                   placeholder="Mot de passe" type="password">
 
-        <label for="password_confirmation">Confirmation mot de passe</label>
-        <input v-model="form.password_confirmation" id="password_confirmation" type="password" placeholder="Confirmation mot de passe">
+            <p v-if="form.errors.password" class="text-red-500 mt-2">{{ form.errors.password }}</p>
+        </div>
 
-        <p v-if="form.errors.password">{{ form.errors.password }}</p>
+        <div class="mb-3">
+            <label class="block font-medium mb-1" for="password_confirmation">Confirmation mot de passe</label>
+            <input id="password_confirmation" v-model="form.password_confirmation"
+                   class="block w-full rounded border border-gray-300 px-2 py-1" placeholder="Confirmation mot de passe"
+                   type="password">
 
-        <button type="submit">Créer</button>
+            <p v-if="form.errors.password" class="text-red-500 mt-2">{{ form.errors.password }}</p>
+        </div>
+
+        <button class="block w-full rounded bg-yellow-400 px-4 py-2 text-white font-semibold" type="submit">
+            Créer
+        </button>
     </form>
 </template>
 

@@ -1,13 +1,23 @@
 <template>
-    <form @submit.prevent="update">
-        <label for="name">Nom</label>
-        <input v-model="form.name" id="name" type="text" placeholder="Nom">
+    <h1 class="text-center font-bold text-xl mb-5">Modifier une catégorie</h1>
 
-        <p v-if="form.errors.name">{{ form.errors.name }}</p>
+    <form class="max-w-xs mx-auto" @submit.prevent="update">
+        <div class="mb-3">
+            <label class="block font-medium mb-1" for="name">Nom</label>
+            <input id="name" v-model="form.name" class="block w-full rounded border border-gray-300 px-2 py-1"
+                   placeholder="Nom" type="text">
 
-        <button type="submit">Modifier</button>
+            <p v-if="form.errors.name" class="text-red-500 mt-2">{{ form.errors.name }}</p>
+        </div>
 
-        <button type="button" @click="destroy">Supprimer</button>
+        <button class="block w-full rounded bg-yellow-400 px-4 py-2 text-white font-semibold mb-3" type="submit">
+            Modifier
+        </button>
+
+        <button class="block w-full rounded bg-red-500 px-4 py-2 text-white font-semibold" type="button"
+                @click="destroy">
+            Supprimer
+        </button>
     </form>
 </template>
 
