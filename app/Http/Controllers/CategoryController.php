@@ -24,7 +24,7 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         Category::create([
-            'name' => ucfirst($request->name)
+            'name' => ucfirst(strtolower($request->name))
         ]);
 
         return redirect()->route('categories.index')->with('success', 'Catégorie créée.');
@@ -40,7 +40,7 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $category->update([
-            'name' => ucfirst($request->name)
+            'name' => ucfirst(strtolower($request->name))
         ]);
 
         return redirect()->route('categories.index')->with('success', 'Catégorie modifiée.');

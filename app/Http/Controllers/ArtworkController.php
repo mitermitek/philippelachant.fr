@@ -36,7 +36,7 @@ class ArtworkController extends Controller
         ]);
 
         Artwork::create([
-            'name' => ucfirst($request->name),
+            'name' => ucfirst(strtolower($request->name)),
             'image_path' => $path,
             'category_id' => $request->category
         ]);
@@ -55,7 +55,7 @@ class ArtworkController extends Controller
     public function update(UpdateArtworkRequest $request, Artwork $artwork)
     {
         $artwork->update([
-            'name' => ucfirst($request->name),
+            'name' => ucfirst(strtolower($request->name)),
             'category_id' => $request->category
         ]);
 
