@@ -1,5 +1,5 @@
 <template>
-    <Link href="/">
+    <Link href="/tableau-de-bord">
         <div class="bg-yellow-400 p-2 flex justify-center items-center">
             <ArrowRightCircleIcon class="w-6 h-6 mr-2 text-white"/>
             <p class="text-white font-semibold">

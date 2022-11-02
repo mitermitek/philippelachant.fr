@@ -27,6 +27,10 @@ Route::post('/connexion', [AuthController::class, 'authenticate']);
 Route::middleware('auth')->group(function () {
     Route::get('/deconnexion', [AuthController::class, 'logout']);
 
+    Route::get('/tableau-de-bord', function () {
+       return Inertia::render('Dashboard');
+    });
+
     Route::get('/utilisateurs', [UserController::class, 'index'])->name('users.index');
     Route::get('/utilisateurs/creer', [UserController::class, 'create'])->name('users.create');
     Route::post('/utilisateurs', [UserController::class, 'store'])->name('users.store');
