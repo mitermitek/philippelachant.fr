@@ -1,5 +1,13 @@
 <template>
     <Layout>
+        <div class="max-w-4xl mx-auto mb-5">
+            <Link :href="`/categories/creer`">
+                <button class="block rounded bg-yellow-400 py-1 px-2 text-white font-semibold" type="button">
+                    Créer une catégorie
+                </button>
+            </Link>
+        </div>
+
         <div class="overflow-x-auto relative rounded">
             <table class="w-full max-w-4xl mx-auto text-left text-sm">
                 <thead class="uppercase bg-gray-100">
