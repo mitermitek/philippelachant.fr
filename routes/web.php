@@ -22,6 +22,9 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
+Route::get('/parcours', function () {
+    return Inertia::render('Career');
+});
 Route::get('/connexion', [AuthController::class, 'login'])->name('login');
 Route::post('/connexion', [AuthController::class, 'authenticate']);
 

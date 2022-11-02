@@ -22,8 +22,12 @@
                     Actualité
                 </Link>
                 <Link :href="`/`"
-                      class="mb-2 p-2 font-semibold rounded hover:text-yellow-400 bg-gray-50 md:bg-transparent md:m-0">
+                      class="mr-0 mb-2 p-2 font-semibold rounded hover:text-yellow-400 bg-gray-50 md:bg-transparent md:mb-0 md:mr-5">
                     Galerie
+                </Link>
+                <Link :href="`/parcours`"
+                      class="mb-2 p-2 font-semibold rounded hover:text-yellow-400 bg-gray-50 md:bg-transparent md:m-0">
+                    Parcours
                 </Link>
             </div>
         </div>
