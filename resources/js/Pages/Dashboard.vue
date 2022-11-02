@@ -1,6 +1,6 @@
 <template>
     <Layout>
-        <div class="grid grid-cols-1 gap-6">
+        <div class="max-w-xl mx-auto grid grid-cols-1 gap-6">
             <div>
                 <Link :href="`/utilisateurs`">
                     <button class="block w-full rounded bg-yellow-400 py-1 px-2 text-white font-semibold" type="button">
