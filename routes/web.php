@@ -4,6 +4,7 @@ use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TopicalityController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -51,4 +52,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/oeuvres/{artwork}/modifier', [ArtworkController::class, 'edit'])->name('artworks.edit');
     Route::put('/oeuvres/{artwork}', [ArtworkController::class, 'update'])->name('artworks.update');
     Route::delete('/oeuvres/{artwork}', [ArtworkController::class, 'destroy'])->name('artworks.destroy');
+
+    Route::get('/actualites', [TopicalityController::class, 'index'])->name('topicalities.index');
+    Route::get('/actualites/creer', [TopicalityController::class, 'create'])->name('topicalities.create');
+    Route::post('/actualites', [TopicalityController::class, 'store'])->name('topicalities.store');
+    Route::get('/actualites/{topicality}/modifier', [TopicalityController::class, 'edit'])->name('topicalities.edit');
+    Route::put('/actualites/{topicality}', [TopicalityController::class, 'update'])->name('topicalities.update');
+    Route::delete('/actualites/{topicality}', [TopicalityController::class, 'destroy'])->name('topicalities.destroy');
 });

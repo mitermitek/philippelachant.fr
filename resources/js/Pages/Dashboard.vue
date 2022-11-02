@@ -23,6 +23,13 @@
                 </Link>
             </div>
             <div>
+                <Link :href="`/actualites`">
+                    <button class="block w-full rounded bg-yellow-400 py-1 px-2 text-white font-semibold" type="button">
+                        Gestion des actualités
+                    </button>
+                </Link>
+            </div>
+            <div>
                 <Link :href="`/deconnexion`">
                     <button class="block w-full rounded bg-red-600 py-1 px-2 text-white font-semibold" type="button">
                         Déconnexion
