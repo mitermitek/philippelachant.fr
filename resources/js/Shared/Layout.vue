@@ -1,7 +1,7 @@
 <template>
     <AuthenticatedUserBar v-if="$page.props.auth.user"/>
     <Navbar/>
-    <main class="container mx-auto py-5 px-3">
+    <main class="container mx-auto py-16 px-3">
         <slot/>
     </main>
     <Footer/>
