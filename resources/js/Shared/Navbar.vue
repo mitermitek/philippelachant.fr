@@ -17,7 +17,7 @@
                       class="mr-0 mb-2 p-2 font-semibold rounded hover:text-yellow-400 bg-gray-50 md:bg-transparent md:mb-0 md:mr-5">
                     Accueil
                 </Link>
-                <Link :href="`/`"
+                <Link :href="`/actu`"
                       class="mr-0 mb-2 p-2 font-semibold rounded hover:text-yellow-400 bg-gray-50 md:bg-transparent md:mb-0 md:mr-5">
                     Actualité
                 </Link>

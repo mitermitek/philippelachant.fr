@@ -3,8 +3,9 @@
 use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\FeedController;
 use App\Http\Controllers\TopicalityController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -22,6 +23,7 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
+Route::get('/actu', [FeedController::class, 'index']);
 Route::get('/parcours', function () {
     return Inertia::render('Career');
 });
