@@ -2,8 +2,11 @@
     <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <Link :href="`/`" class="flex items-center">
-                <span class="self-center text-xl font-semibold whitespace-nowrap">
+                <span class="self-center text-xl font-semibold whitespace-nowrap hidden sm:block">
                     Philippe <span class="text-yellow-400">Lachant</span>
+                </span>
+                <span class="self-center text-xl font-semibold whitespace-nowrap sm:hidden">
+                    PH<span class="text-yellow-400">L.</span>
                 </span>
             </Link>
             <div class="flex items-center md:hidden">
