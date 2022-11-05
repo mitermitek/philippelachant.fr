@@ -4,6 +4,7 @@ use App\Http\Controllers\ArtworkController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FeedController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\TopicalityController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,7 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 Route::get('/actu', [FeedController::class, 'index']);
+Route::get('/galerie', [GalleryController::class, 'index']);
 Route::get('/parcours', function () {
     return Inertia::render('Career');
 });
