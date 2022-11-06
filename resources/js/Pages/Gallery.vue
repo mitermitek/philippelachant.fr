@@ -8,9 +8,9 @@
             <div v-for="artwork in artworks" :key="artwork.id" class="aspect-square block relative w-full h-full">
                 <img :alt="artwork.name" :src="`/${artwork.image_path}`" class="object-cover w-full h-full rounded-lg">
                 <div class="absolute bottom-0 p-3 bg-black bg-opacity-20 w-full rounded-b-lg">
-                    <span class="text-white shadow">{{ artwork.name }}</span>
+                    <span class="text-white [text-shadow:_0_2px_5px_rgb(0_0_0_/_75%)]">{{ artwork.name }}</span>
                     <br/>
-                    <span class="text-white shadow">{{ artwork.category.name }}</span>
+                    <span class="text-white [text-shadow:_0_2px_5px_rgb(0_0_0_/_75%)]">{{ artwork.category.name }}</span>
                 </div>
             </div>
         </div>
