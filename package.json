@@ -20,6 +20,7 @@
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
         "@vitejs/plugin-vue": "^3.1.0",
-        "vue": "^3.2.39"
+        "vue": "^3.2.39",
+        "vue-easy-lightbox": "^1.11.0"
     }
 }
